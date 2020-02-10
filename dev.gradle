@@ -1,0 +1,9 @@
+//apply plugin: 'application'
+//
+//application {
+//    mainClassName = 'dev.alpas.fireplace.StartKt'
+//}
+//
+//dependencies {
+//    compile project(':framework')
+//}

@@ -1,7 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.3.61'
     ext.ktorm_version = '2.5'
-    ext.alpas_version = '0.14.0'
+    ext.alpas_version = '0.14.2'
 }
 
 plugins {
@@ -11,13 +11,13 @@ plugins {
 }
 
 startScripts {
-    applicationName = '__APP_NAME__'
+    applicationName = 'fireplace'
 }
 
-mainClassName = '__PACKAGE__.StartKt'
+mainClassName = 'dev.alpas.fireplace.StartKt'
 
-group '__PACKAGE__'
-version '1.0.0'
+group 'dev.alpas.fireplace'
+version '0.3.0'
 
 repositories {
     jcenter()
@@ -49,7 +49,7 @@ compileTestKotlin {
 
 jar {
     manifest {
-        attributes 'Main-Class': '__PACKAGE__.StartKt'
+        attributes 'Main-Class': 'dev.alpas.fireplace.StartKt'
     }
 }
 
@@ -63,7 +63,7 @@ task enforceVersion() {
 
 shadowJar {
     destinationDirectory = file("./")
-    archiveBaseName.set('__APP_NAME__')
+    archiveBaseName.set('fireplace')
     archiveClassifier.set(null)
     version = null
 }
@@ -75,5 +75,8 @@ test {
 }
 
 installDist {
-    destinationDir = file("./build/install/__APP_NAME__")
+    destinationDir = file("./build/install/fireplace")
 }
+
+
+//apply from: 'dev.gradle'

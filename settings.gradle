@@ -1,0 +1,4 @@
+//rootProject.name = 'fireplace'
+//
+//include ':framework'
+//project (':framework').projectDir = new File('../../alpas/framework')

@@ -1,4 +1,4 @@
-package __PACKAGE__
+package dev.alpas.fireplace
 
 import dev.alpas.Application
 import dev.alpas.ServiceProvider
@@ -17,7 +17,7 @@ class ConsoleKernel : ConsoleKernel() {
             EncryptionServiceProvider::class,
             HashServiceProvider::class,
             RouteServiceProvider::class
-            //,dev.alpas.ozone.OzoneServiceProvider::class
+            ,dev.alpas.ozone.OzoneServiceProvider::class
         )
     }
 }
