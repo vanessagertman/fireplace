@@ -4,7 +4,7 @@
 <div class="py-10 h-screen container mx-auto">
 {% if projects is not empty %}
     <div class="text-gray-800 text-right">
-        <a href=""
+        <a href="{{ route("projects.create") }}"
            class="bg-indigo-700 border hover:bg-indigo-800 px-4 py-3 rounded text-indigo-100 text-lg">
             Create a New Project
         </a>
@@ -16,7 +16,7 @@
         <div class="bg-gray-300 border border-gray-400 h-64 m-2 max-w-3xl max-w-md overflow-hidden p-10 rounded text-xl text-center text-gray-800 w-full flex justify-center flex-col">
             There are no projects :(
             <div class="mt-10">
-                <a href=""
+                <a href="{{ route("projects.create") }}"
                    class="bg-indigo-700 border hover:bg-indigo-800 px-4 py-3 rounded text-indigo-100 text-lg">
                     Create a New Project
                 </a>
