@@ -21,6 +21,9 @@ import kotlin.reflect.KClass
 class EmailVerificationController : Controller(), HandlesEmailVerification
 {
 
+    override fun ifVerifiedRedirectTo(call: HttpCall): String {
+       return "/projects"
+    }
     override fun  sendVerificationNotice(call: HttpCall, user: Authenticatable) {
         val mail =VerifyEmail(call)
         call.make<NotificationDispatcher>().dispatch(mail, user)
