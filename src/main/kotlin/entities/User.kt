@@ -8,6 +8,7 @@ import dev.alpas.ozone.OzoneTable
 import dev.alpas.ozone.bigIncrements
 import me.liuwj.ktorm.dsl.eq
 import me.liuwj.ktorm.entity.findById
+import me.liuwj.ktorm.entity.findList
 import me.liuwj.ktorm.entity.findOne
 import me.liuwj.ktorm.schema.timestamp
 import me.liuwj.ktorm.schema.varchar
@@ -23,6 +24,8 @@ interface User : OzoneEntity<User>, Authenticatable {
     var createdAt: Instant?
     var updatedAt: Instant?
     var emailVerifiedAt: Instant?
+
+    val projects get() = Projects.findList { it.ownerId eq id }
 
     override val mustVerifyEmail: Boolean
         get() = true
