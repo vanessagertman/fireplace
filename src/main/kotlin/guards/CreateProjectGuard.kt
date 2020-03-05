@@ -10,10 +10,6 @@ import dev.alpas.validation.Rule
 
 class CreateProjectGuard : ValidationGuard() {
     override fun rules(): Map<String, Iterable<Rule>> {
-        // title required, not null or empty
-        // description not null or empty
-
-
         return mapOf(
             "title" to listOf(Required(), Min(8)),
             "description" to listOf(Required())
