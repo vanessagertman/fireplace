@@ -31,6 +31,7 @@ private fun RouteGroup.addProjectRoutes() {
     get("/create", ProjectController::create).name("create")
     post("/", ProjectController::store).name("store")
     delete("/", ProjectController::delete).name("delete")
+    get("/<id>", ProjectController::show).name("show")
 
 }
 private fun Router.apiRoutes() {

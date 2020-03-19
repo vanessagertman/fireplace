@@ -24,7 +24,7 @@
         </div>
     {% else %}
     {% for project in projects %}
-        <a href=""
+        <a href="{{ route('projects.show', {"id": project.id}) }}"
            class="max-w-md rounded overflow-hidden shadow-lg m-2 w-1/3 hover-controller bg-white hover:bg-gray-100">
             <div class="p-10 h-full flex flex-col">
                 <div class="inline-flex w-full">
