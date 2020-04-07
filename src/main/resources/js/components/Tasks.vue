@@ -7,6 +7,8 @@
                         {{ task.body }}
                     </label>
 
+                    <button class="destroy text-red-500 hover:text-red-700 hidden w-10 text-2xl"
+                            @click="removeTask(task)"/>
                 </div>
             </li>
         </ul>
@@ -52,6 +54,10 @@
                     this.$refs.newTaskInput.focus()
                 })
             },
+            async removeTask(task) {
+                await this.form.delete(`/projects/${this.projectId}/tasks/${task.id}`)
+                this.tasks = this.tasks.filter(t => t.id !== task.id)
+            }
         }
     }
 </script>
