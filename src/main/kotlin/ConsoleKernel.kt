@@ -16,8 +16,8 @@ class ConsoleKernel : ConsoleKernel() {
             LoggerServiceProvider::class,
             EncryptionServiceProvider::class,
             HashServiceProvider::class,
-            RouteServiceProvider::class
-            ,dev.alpas.ozone.OzoneServiceProvider::class
+            RouteServiceProvider::class,
+            dev.alpas.ozone.OzoneServiceProvider::class
         )
     }
 }
