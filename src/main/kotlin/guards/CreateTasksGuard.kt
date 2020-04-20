@@ -8,12 +8,12 @@ import dev.alpas.validation.ValidationGuard
 import dev.alpas.validation.Rule
 import dev.alpas.validation.required
 
-class CreateTasksGuard : ValidationGuard() {
+open class CreateTasksGuard : ValidationGuard() {
     override fun rules(): Map<String, Iterable<Rule>> {
           return mapOf("body" to listOf(JsonField(required())))
     }
 
-    fun commit() : Task {
+    open fun commit() : Task {
         return Tasks.create{
             it.body to call.jsonBody?.get("body")
             it.projectId to call.longParam("project")

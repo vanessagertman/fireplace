@@ -41,6 +41,7 @@ private fun RouteGroup.addTaskRoutes() {
     group("<project>/tasks") {
         post("/", TaskController::store).name("create")
         delete("<id>", TaskController::delete).name("delete")
+        patch("<id>", TaskController::update).name("update")
     }.name("tasks")
 }
 
