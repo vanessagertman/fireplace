@@ -26,6 +26,7 @@ interface User : OzoneEntity<User>, Authenticatable {
     var emailVerifiedAt: Instant?
 
     val projects get() = Projects.findList { it.ownerId eq id }
+    val projectMembership get() = ProjectMemberships.findList { it.userId eq id }.map{ it.project }
 
     override val mustVerifyEmail: Boolean
         get() = true

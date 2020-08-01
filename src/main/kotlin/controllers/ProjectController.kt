@@ -19,7 +19,8 @@ class ProjectController : Controller() {
     fun index(call: HttpCall) {
         val user = call.caller<User>()
         val projects = user.projects
-        call.render("project_list", mapOf("projects" to projects))
+        val membershipProjects = user.projectMembership
+        call.render("project_list", mapOf("projects" to projects, "membershipProjects" to membershipProjects))
     }
 
     fun create(call: HttpCall) {
