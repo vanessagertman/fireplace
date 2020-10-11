@@ -8,8 +8,8 @@ import java.time.Instant
 
 interface Project : OzoneEntity<Project> {
     var id: Long
-    val title: String
-    val description: String
+    var title: String
+    var description: String
     val notes: String?
     val owner: User
     val tasks get() = hasMany(Tasks)
